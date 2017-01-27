@@ -1,3 +1,6 @@
+<?php
+print_r (print_r($_POST));
+?>
 <html lang="en">
     <head>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">

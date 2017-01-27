@@ -53,10 +53,10 @@ if ($username && $password ) {
                     <form class="form-signin" id="login-form" action="index.php" method="post">
                         <span id="reauth-email" class="reauth-email"></span>
                         <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="qqqqqq" required>
                         <div id="error-log">
                         </div>
-                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="login">Sign in</button>
+                        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="submit">Sign in</button>
                     </form><!-- /form -->
                 </div><!-- /card-container -->
             </div><!-- /container -->
