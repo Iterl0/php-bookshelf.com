@@ -1,6 +1,8 @@
 <?php
 include('core.php');
 print_r($_POST);
+echo "<br>";
+print_r($_SESSION);
 $username = $_POST['username'] ? $_POST['username'] : null;
 $password = $_POST['password'] ? $_POST['password'] : null;
 if ($username && $password ) {
@@ -53,7 +55,7 @@ if ($username && $password ) {
                     <form class="form-signin" id="login-form" action="index.php" method="post">
                         <span id="reauth-email" class="reauth-email"></span>
                         <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
-                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="qqqqqq" required>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="qwerty" required>
                         <div id="error-log">
                         </div>
                         <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="submit">Sign in</button>

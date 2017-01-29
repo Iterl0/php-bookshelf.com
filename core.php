@@ -1,13 +1,10 @@
 <?php
-//if(isset($_POST['submit']) && $_POST['user_valid']==1) {
+session_start();
+//session_destroy();
+//if(isset($_POST['submit'])) {
 //    header('Location: books.php');
 //    exit;
 //}
-
-if(isset($_POST['submit'])) {
-    header('Location: books.php');
-    exit;
-}
 
 //goto_main();
 
@@ -16,13 +13,14 @@ if(isset($_POST['submit'])) {
 //echo $user_valid;
 
 $generic_user_keys = ['username', 'password', 'role'];
-$user_data_arr = [[ 'Great_Admin', 'Adminn', 'admin'], ['Jon_Doe', 'qwerty', 'user'], ['Jane_Doe', '123456', 'user']];
+$user_data_arr = [[ 'Great_Admin', 'Adminn', 'admin'], ['Jon_Doe', 'qwerty', 'user'], ['Jane_Doe', 'qwerty', 'user']];
 $arr_size = sizeof($user_data_arr);
 for ($i = 0; $i <= ($arr_size-1); $i++) {
     $user = array_combine($generic_user_keys, $user_data_arr[$i]);
     $users_arr[] = $user;
 }
 
+//print_r($_GET);
 print_r($_POST);
 $username = $_POST[username];
 $password = $_POST[password];
@@ -63,15 +61,20 @@ echo "<br> ----";
 
 
 
-echo "<br> end of core!";
-echo "<br>";
-function goto_main() {
-    if ($_POST['user_valid'] == 1) {
-        if(isset($_POST['submit'])){
-            header('Location: books.php');
-            exit;
-        }
-    }
+echo "<br> user valid -->" . $user_valid;
+
+
+if(isset($_POST['submit']) && $user_valid) {
+    $_SESSION[username] = $_POST[username];
+    $URL="books.php";
+    echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+//    echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
 }
 
-$_POST['user_valid'] = $user_valid;
+
+
+echo "<br>";
+echo "<br> _SESSION - >" . $_SESSION["username"];
+echo "<br> end of core! --------- ";
+echo "<br>";
+
