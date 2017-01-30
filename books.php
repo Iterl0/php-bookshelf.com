@@ -1,6 +1,9 @@
 <?php
 include('core.php');
-print_r($_SESSION);
+login_stat();
+//session_start();
+//print_r($_SESSION);
+//print_r($_COOKIE);
 ?>
 <html lang="en">
     <head>
@@ -30,21 +33,23 @@ print_r($_SESSION);
                     <th class="text-left"> </th>
                 </tr>
             </thead>
-            <button onclick="insert_cell()">Try it</button>
-<!--            <tbody>-->
-<!--                <tr>-->
-<!--                    <td class="text-left">January</td>-->
-<!--                    <td class="text-left">$ 50,000.00</td>-->
-<!--                    <td class="text-left">$ 50,000.00</td>-->
-<!--                    <td class="text-left"></td>-->
-<!--                </tr>-->
-<!--                <tr>-->
-<!--                    <td class="text-left">January</td>-->
-<!--                    <td class="text-left">$ 50,000.00</td>-->
-<!--                    <td class="text-left">$ 50,000.00</td>-->
-<!--                    <td class="text-left"></td>-->
-<!--                </tr>-->
-<!--            </tbody>-->
+            <a href="logout.php" class="btn btn-default">log out</a>
+            <?php if (is_admin()): ?>
+                <tbody>
+                    <tr>
+                        <td class="text-left">January</td>
+                        <td class="text-left">$ 50,000.00</td>
+                        <td class="text-left">$ 50,000.00</td>
+                        <td class="text-left"></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">January</td>
+                        <td class="text-left">$ 50,000.00</td>
+                        <td class="text-left">$ 50,000.00</td>
+                        <td class="text-left"></td>
+                    </tr>
+                </tbody>
+            <?php endif; ?>
         </table>
 
 

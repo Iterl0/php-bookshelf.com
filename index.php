@@ -1,8 +1,5 @@
 <?php
 include('core.php');
-print_r($_POST);
-echo "<br>";
-print_r($_SESSION);
 $username = $_POST['username'] ? $_POST['username'] : null;
 $password = $_POST['password'] ? $_POST['password'] : null;
 if ($username && $password ) {
@@ -11,11 +8,15 @@ if ($username && $password ) {
 
     $username = stripslashes($username);
     $password = stripslashes($password);
-
+//    session_destroy();
     preg_match("/^[A-Za-z0-9_]{1,20}$/", $username, $match);
     preg_match("/^[A-Za-z0-9_]{1,20}$/", $password, $match);
     if ($match && $password){
-
+        if($user = check_valid_user($username, $password)) {
+//            session_start();
+            $_SESSION['user'] = $user;
+            redirect('books.php');
+        }
     }
 }
 
