@@ -7,6 +7,7 @@
 body, html {
     height: 100%;
     background-repeat: no-repeat;
+    /*background-color: #31b0d5;*/
     background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
 }
 
@@ -295,3 +296,12 @@ td.text-center {
 td.text-right {
     text-align: right;
 }
+
+
+
+
+#edit_form {
+    width: 1000px;
+}
+
+
