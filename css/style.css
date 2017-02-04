@@ -5,7 +5,7 @@
  * General styles
  */
 body, html {
-    height: 100%;
+
     background-repeat: no-repeat;
     /*background-color: #31b0d5;*/
     background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
@@ -304,4 +304,15 @@ td.text-right {
     width: 1000px;
 }
 
+#myTable {
+    width: 1000px;
+    max-width: inherit;
+}
 
+#popup {
+    width: 900px;
+}
+
+#modal-dialog {
+    width: 900px;
+}
